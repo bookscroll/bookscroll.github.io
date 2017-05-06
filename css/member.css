@@ -1,0 +1,79 @@
+/* ------------------------------------- */
+/* Team ................... */
+/* ------------------------------------- */
+.team {
+  width: 100%;
+  padding: 10% 8%;
+  background: #fff;
+  color: #000; }
+.team p {
+  color: #666666; }
+
+.member {
+  padding: 0px 7.5px !important;
+  margin: 20px 0px;
+  overflow: hidden; }
+.member .member-img {
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden; }
+.member .member-img img {
+  margin: 0 auto;
+  width: 100%; }
+.member .member-img .member-overlay {
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  position: absolute;
+  background: rgba(32, 34, 43, 0.7);
+  width: 100%;
+  text-align: center;
+  height: 100%; }
+.member .member-img .member-overlay a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 70%;
+  padding: 0.3125em 0.625em; }
+.member .member-info {
+  position: absolute;
+  height: 6.25em;
+  padding: 0.625em;
+  width: calc(100% - 15px);
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  text-align: center;
+  color: #fff;
+  background: #1d2328; }
+  .member .member-info h5 {
+    font-weight: 600;
+    margin-bottom: 0; }
+  .member .member-info h6 {
+    font-weight: 400; }
+.member:hover .member-img {
+  -webkit-transform: translateY(-4.375em);
+  -ms-transform: translateY(-4.375em);
+  -moz-transform: translateY(-4.375em);
+  -o-transform: translateY(-4.375em);
+  transform: translateY(-4.375em); }
+  .member:hover .member-img .member-overlay {
+    opacity: 1;
+    visibility: visible; }
+.member:hover .member-info {
+  -webkit-transform: translateY(-4.375em);
+  -ms-transform: translateY(-4.375em);
+  -moz-transform: translateY(-4.375em);
+  -o-transform: translateY(-4.375em);
+  transform: translateY(-4.375em); }
