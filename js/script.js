@@ -79,7 +79,7 @@ Copyright (C) 2016 Coderare
         element.innerHTML = html;
     }
 
-      twitterFetcher.fetch(config5);
+      //twitterFetcher.fetch(config5);
 })();
 
 
@@ -119,13 +119,13 @@ $( document ).ready(function() {
   /* ------------------------------------- */
   /* Masonry Grid    ................... */
   /* ------------------------------------- */
-    $(function() {
+    /*$(function() {
       var $grid = $('.gallery').imagesLoaded( function() {
         $grid.masonry({
           itemSelector: '.item',
         });
       });
-    });
+    });*/
 
  /* ------------------------------------- */
  /* Project Gallery   ................... */
@@ -182,7 +182,7 @@ $( document ).ready(function() {
 /* MagnificPopup    ................... */
 /* ------------------------------------- */
 
-  $('.portfolio').magnificPopup({
+  /*$('.portfolio').magnificPopup({
     delegate: 'a', // child items selector, by clicking on it popup will open
     type: 'image',
     gallery:{enabled:true},
@@ -202,7 +202,7 @@ $( document ).ready(function() {
         return openerElement.is('img') ? openerElement : openerElement.find('img');
       }
     }
-  });
+  });*/
 
 
 /* ------------------------------------- */
@@ -412,18 +412,18 @@ $( document ).ready(function() {
 };
 
 // execute above function
-initPhotoSwipeFromDOM('.my-gallery');
+//initPhotoSwipeFromDOM('.my-gallery');
 
 
 /* ------------------------------------- */
 /* Instagram feeds    ................... */
 /* ------------------------------------- */
 
-$(".instagram_feed").jqinstapics({
+/*$(".instagram_feed").jqinstapics({
     "user_id": "3104228542",
     "access_token": "3104228542.1677ed0.c2bd70cc2e3243f981625ee7b4ba1408",
     "count": 16
-});
+});*/
 
 // Instagram Feeds (we will switch back to spectragram js later)
   // if($('.instagram_feed').length){
@@ -445,7 +445,7 @@ $(".instagram_feed").jqinstapics({
 /* Slider    ................... */
 /* ------------------------------------- */
 
-$(window).load(function() {
+/*$(window).load(function() {
 
   // Adding display effect to Twitter Feeds
   $('#twitterFeed').flexslider({
@@ -462,7 +462,7 @@ $(window).load(function() {
     nextText: "",
 
   });
-});
+});*/
 
 /* ------------------------------------- */
 /* Backgound img Appending................... */
@@ -484,7 +484,7 @@ $(window).load(function() {
 /* CountDown Timer   ................... */
 /* ------------------------------------- */
 
-  $('#clock')
+/*  $('#clock')
   .countdown($('#clock').attr("data-date")).on('update.countdown', function(event) {
      var $this = $(this).html(event.strftime(''
        + '<div class="clock-box"><span>%-D</span> Day%!d, </div>'
@@ -493,6 +493,7 @@ $(window).load(function() {
        + '<div class="clock-box"><span>%S</span> seconds </div>'
        ));
   });
+*/
 
 /* ------------------------------------- */
 /* Subscribe Form   ................... */
