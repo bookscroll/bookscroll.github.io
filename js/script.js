@@ -1,35 +1,3 @@
-/*------------------------------------------------------------------
- Deft - Multiporpose Coming Soon Template
-
-* Version       :  1
-* Build Date    : 31 May 2016
-* Last Update   : 3 June 2016
-* Author        : CodeRare
-* Primary use   : Coming Soon
-
-Copyright (C) 2016 Coderare
--------------------------------------------------------------------*/
-
-/*------------------------------------------------------------------
-[Table of contents]
-
-1. Twitter Feeds
-2. Page Loading
-3. Masonry Grid
-4. Google Map
-5. Project Gallery
-6. MagnificPopup
-7. PhotoSwipe
-8. Instagram feeds
-9. Slider
-10. Backgound img Appending
-11. CountDown Timer
-12. Subscribe Form
-13. Contact Form
-14. ScrollToTop
-
--------------------------------------------------------------------*/
-
 (function() {
   "use strict";
 
