@@ -636,4 +636,20 @@ $(function() {
       return false;
     });
 
+  /* ------------------------------------- */
+  /* Explore   ................... */
+  /* ------------------------------------- */
+
+    $('.explore').on('click', function() {
+      $('#rightSide').animate({
+          scrollTop: $("#subscribe").offset().top
+      }, 500);
+      if($(window).width() < 1024) {
+        $('html, body').animate({
+            scrollTop: $("#subscribe").offset().top
+        }, 500);
+      }
+      return false;
+    });
+
 });
