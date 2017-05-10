@@ -61,7 +61,7 @@ $( document ).ready(function() {
 /* Page Loading    ................... */
 /* ------------------------------------- */
 
-  $(".animsition").animsition({
+  /*$(".animsition").animsition({
     inClass: 'fade-in',
     outClass: 'fade-out',
     inDuration: 1500,
@@ -82,7 +82,7 @@ $( document ).ready(function() {
     overlayClass : 'animsition-overlay-slide',
     overlayParentElement : 'body',
     transition: function(url){ window.location.href = url; }
-  });
+  });*/
 
   /* ------------------------------------- */
   /* Masonry Grid    ................... */
