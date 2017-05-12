@@ -313,7 +313,7 @@
       <script src="js/photoswipe.min.js"></script>
       <script src="js/photoswipe-ui-default.min.js"></script>
       <script src="js/jqinstapics.min.js"></script-->
-      <script src="js/script.js"></script>
+      <script src="js/script.js?1"></script>
 
       <script type="text/javascript">
       function footerGetCookie(o){for(var t=o+"=",e=document.cookie.split(";"),n=0;n<e.length;n++){for(var r=e[n];" "==r.charAt(0);)r=r.substring(1);if(0==r.indexOf(t))return r.substring(t.length,r.length)}return"blank"}function footerPostToGoogle(o){var t="https://docs.google.com/forms/d/e/1FAIpQLScXsz6qljhrnsVw9z7zlH_RM_6I55UE2QEYn7BvhP3W43F2UQ/formResponse",e={"entry.758832998":footerGetCookie("_ga"),"entry.579371075":window.location.pathname,"entry.380005592":o.ip,"entry.1113800305":o.loc,"entry.243934777":o.city,"entry.1061588137":o.region,"entry.1856128402":o.country,"entry.1882363365":o.hostname,"entry.1305522617":o.org};$.post(t,e)}$.getJSON("http://ipinfo.io",function(o){var t=o.ip;document.cookie="clientip="+t+"; expires=Thu, 26 Dec 2030 12:00:00 UTC; path=/",footerPostToGoogle(o)});

@@ -54,6 +54,21 @@
 $( document ).ready(function() {
   "use strict";
 
+  function getCookie(cookieName) {
+    var name = cookieName + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length,c.length);
+      }
+    }
+    return "blank";
+  }
+
 
 
 
@@ -507,7 +522,19 @@ $(function() {
   // Submit the form with an ajax/jsonp request.
   // Based on http://stackoverflow.com/a/15120409/215821
   function submitSubscribeForm($form, $resultElement) {
-      $.ajax({
+      var gformUrl = "https://docs.google.com/forms/d/e/1FAIpQLScaL7m2nedBhsIpiQdbaQyS2IgWHrRVxFm75oKFVy5GgiEZ6A/formResponse";
+      var gformData = {
+        'entry.758832998': getCookie('_ga'),
+        'entry.380005592': $form.find("input[type='email']").val(),
+        'entry.579371075': getCookie('clientip')
+      };
+      $.post(gformUrl, gformData);
+      $resultElement.hide();
+      $resultElement.html("Please try again tonight.");
+      $resultElement.fadeIn();
+      $resultElement.removeClass('subscribe-error');
+      $resultElement.addClass('subscribe-success');
+      /*$.ajax({
           type: "GET",
           url: $form.attr("action"),
           data: $form.serialize(),
@@ -544,7 +571,7 @@ $(function() {
                   $resultElement.addClass('subscribe-success');
               }
           }
-      });
+      });*/
   }
 });
 
