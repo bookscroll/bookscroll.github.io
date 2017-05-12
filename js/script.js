@@ -517,6 +517,11 @@ $(function() {
           contentType: "application/json; charset=utf-8",
           error: function(error){
               // According to jquery docs, this is never called for cross-domain JSONP requests
+              $resultElement.hide();
+              $resultElement.html("Please try again tonight.");
+              $resultElement.fadeIn();
+              $resultElement.removeClass('subscribe-error');
+              $resultElement.addClass('subscribe-success');
           },
           success: function(data){
               if (data.result != "success") {
@@ -578,6 +583,7 @@ $(function() {
         },1500);
         $('.error').fadeOut();
   			// Set the message text.
+        response = "Please try again tonight.";
   			$(formMessageSuccess).text(response);
 
   			// Clear the form.
@@ -595,7 +601,8 @@ $(function() {
 
   			// Set the message text.
   			if (data.responseText !== '') {
-  				$(formMessageError).text(data.responseText);
+  				//$(formMessageError).text(data.responseText);
+          $(formMessageError).text("Please try again tonight.");
   			} else {
   				$(formMessageError).text('Oops! An error occured and your message could not be sent.');
   			}
