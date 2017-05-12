@@ -626,11 +626,11 @@ $(function() {
 
     $('#down').on('click', function() {
       $('#rightSide').animate({
-          scrollTop: $("#subscribe").offset().top
+          scrollTop: $("#explorehere").offset().top
       }, 500);
       if($(window).width() < 1024) {
         $('html, body').animate({
-            scrollTop: $("#subscribe").offset().top
+            scrollTop: $("#explorehere").offset().top
         }, 500);
       }
       return false;
@@ -642,11 +642,11 @@ $(function() {
 
     $('.explore').on('click', function() {
       $('#rightSide').animate({
-          scrollTop: $("#subscribe").offset().top
+          scrollTop: $("#explorehere").offset().top
       }, 500);
       if($(window).width() < 1024) {
         $('html, body').animate({
-            scrollTop: $("#subscribe").offset().top
+            scrollTop: $("#explorehere").offset().top
         }, 500);
       }
       return false;
