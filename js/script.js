@@ -528,50 +528,43 @@ $(function() {
         'entry.380005592': $form.find("input[type='email']").val(),
         'entry.579371075': getCookie('clientip')
       };
-      $.post(gformUrl, gformData);
-      $resultElement.hide();
-      $resultElement.html("Please try again tonight.");
-      $resultElement.fadeIn();
-      $resultElement.removeClass('subscribe-error');
-      $resultElement.addClass('subscribe-success');
-      /*$.ajax({
-          type: "GET",
-          url: $form.attr("action"),
-          data: $form.serialize(),
-          cache: false,
-          dataType: "jsonp",
-          jsonp: "c", // trigger MailChimp to return a JSONP response
-          contentType: "application/json; charset=utf-8",
-          error: function(error){
-              // According to jquery docs, this is never called for cross-domain JSONP requests
-              $resultElement.hide();
-              $resultElement.html("Please try again tonight.");
-              $resultElement.fadeIn();
-              $resultElement.removeClass('subscribe-error');
-              $resultElement.addClass('subscribe-success');
-          },
-          success: function(data){
-              if (data.result != "success") {
-                  var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
-                  if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
 
-                      message = "You're already subscribed. Thank you.";
-                  }
-                  $resultElement.hide();
-                  $resultElement.html(message);
-                  $resultElement.fadeIn();
-                  $resultElement.removeClass('subscribe-error');
-                  $resultElement.addClass('subscribe-success');
 
-              } else {
-                  $resultElement.hide();
-                  $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
-                  $resultElement.fadeIn();
-                  $resultElement.removeClass('subscribe-error');
-                  $resultElement.addClass('subscribe-success');
-              }
+      if(navigator.onLine == false) {
+        var error =  "Please check internet connection.";
+        $resultElement.hide();
+        $resultElement.html(error);
+        $resultElement.fadeIn();
+        $resultElement.removeClass('subscribe-success');
+        $resultElement.addClass('subscribe-error');
+        return;
+      }
+
+      $.ajax({
+        type: "POST",
+        url: gformUrl,
+        data: gformData,
+        cache: false,
+        complete: function(xhr, textStatus) {
+          if(navigator.onLine) {
+            $resultElement.hide();
+            $form.find("input[type='email']").val('');
+            $resultElement.html("Thank you for subscribing.");
+            $resultElement.fadeIn();
+            $resultElement.removeClass('subscribe-error');
+            $resultElement.addClass('subscribe-success');
           }
-      });*/
+          else {
+            var error =  "Please check internet connection.";
+            $resultElement.hide();
+            $resultElement.html(error);
+            $resultElement.fadeIn();
+            $resultElement.removeClass('subscribe-success');
+            $resultElement.addClass('subscribe-error');
+            return;
+          }
+        }
+      });
   }
 });
 
@@ -593,47 +586,77 @@ $(function() {
   		// Stop the browser from submitting the form.
   		e.preventDefault();
 
-  		// Serialize the form data.
-  		var formData = $(form).serialize();
+      var inputName = $('#contact_form .input-name').val();
+      var inputEmail = $('#contact_form .input-email').val();
+      var inputMessage = $('#contact_form .input-message').val();
 
-  		// Submit the form using AJAX.
-  		$.ajax({
-  			type: 'POST',
-  			url: $(form).attr('action'),
-  			data: formData
-  		})
-  		.done(function(response) {
-  			// Make sure that the formMessages span or div has the 'success' class.
-        $('.success').fadeIn();
-        setTimeout(function(){
-          $('.success').fadeToggle(200,0);
-        },1500);
-        $('.error').fadeOut();
-  			// Set the message text.
-        response = "Please try again tonight.";
-  			$(formMessageSuccess).text(response);
-
-  			// Clear the form.
-  			$('.input-name').val('');
-  			$('.input-email').val('');
-  			$('.input-message').val('');
-  		})
-  		.fail(function(data) {
-  			// Make sure that the formMessages span or div has the 'error' class.
+      if (!inputName || !inputName.length || !inputEmail || !inputEmail.length || !inputMessage || !inputMessage.length || inputEmail.indexOf("@") == -1) {
         $('.error').fadeIn();
         setTimeout(function(){
           $('.error').fadeToggle(200,0);
         },1500);
         $('.success').fadeOut();
 
-  			// Set the message text.
-  			if (data.responseText !== '') {
-  				//$(formMessageError).text(data.responseText);
-          $(formMessageError).text("Please try again tonight.");
-  			} else {
-  				$(formMessageError).text('Oops! An error occured and your message could not be sent.');
-  			}
-  		});
+        // Set the message text.
+        $(formMessageError).text("Invalid input fields.");
+        return;
+      }
+
+      var gformUrl = "https://docs.google.com/forms/d/e/1FAIpQLSctmqdEcsAbwslmYgwjSiZ1dJ5Kuy6WXhXxchuUmYI6_xsiOg/formResponse";
+      var gformData = {
+        'entry.758832998': getCookie('_ga'),
+        'entry.308608093': inputName,
+        'entry.380005592': inputEmail,
+        'entry.518725003': inputMessage,
+        'entry.579371075': getCookie('clientip')
+      };
+
+      if(navigator.onLine == false) {
+        $('.error').fadeIn();
+        setTimeout(function(){
+          $('.error').fadeToggle(200,0);
+        },1500);
+        $('.success').fadeOut();
+
+        // Set the message text.
+        $(formMessageError).text("Please check internet connection.");
+        return;
+      }
+
+      $.ajax({
+        type: "POST",
+        url: gformUrl,
+        data: gformData,
+        cache: false,
+        complete: function(xhr, textStatus) {
+          if(navigator.onLine) {
+            // Make sure that the formMessages span or div has the 'success' class.
+            $('.success').fadeIn();
+            setTimeout(function(){
+              $('.success').fadeToggle(200,0);
+            },1500);
+            $('.error').fadeOut();
+            // Set the message text.
+            $(formMessageSuccess).text("Your message has been sent! Thank you :)");
+
+            // Clear the form.
+            $('#contact_form .input-name').val('');
+            $('#contact_form .input-email').val('');
+            $('#contact_form .input-message').val('');
+          }
+          else {
+            // Make sure that the formMessages span or div has the 'error' class.
+            $('.error').fadeIn();
+            setTimeout(function(){
+              $('.error').fadeToggle(200,0);
+            },1500);
+            $('.success').fadeOut();
+
+            // Set the message text.
+            $(formMessageError).text("Please check internet connection.");
+          }
+        }
+      });
   	});
   });
 
