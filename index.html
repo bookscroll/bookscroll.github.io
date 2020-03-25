@@ -1,19 +1,304 @@
-<!doctype html>
-<title>Bookscroll</title>
-<style>
-  body { text-align: center; padding: 150px; }
-  h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
-  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-  a { color: #dc8100; text-decoration: none; }
-  a:hover { color: #333; text-decoration: none; }
-</style>
+<!DOCTYPE html>
 
-<article>
-    <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:contact@bookscroll.com">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
-        <p>&mdash; The Team</p>
-    </div>
-</article>
-~            
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Spend less. Read more.">
+      <meta name="author" content="BookScroll">
+
+      <meta property="og:title" content="BookScroll" />
+      <meta property="og:url" content="http://bookscroll.com" />
+      <meta property="og:image" content="https://drive.google.com/uc?id=0B837f-mfWeKgRVhGWVdEMU1zYms" />
+      <meta property="og:description" content="Spend less. Read more." />
+      <meta property="og:site_name" content="BookScroll" />
+      <title>Bookscroll</title>
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+      <!-- Favicon ================== -->
+      <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+      <link rel="manifest" href="./favicon/manifest.json">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+
+      <!--  Resources style ================= -->
+      <link href="css/member.css" rel="stylesheet" type="text/css" media="all"/>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" media="all"/>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+      <!--link href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css" rel="stylesheet" type="text/css" media="all"/-->
+      <link href="css/theme.css" rel="stylesheet" type="text/css" media="all"/>
+
+    </head>
+    <body>
+      <section class="animsition">
+
+        <div id="leftSide">
+
+          <div id="home" class="gradient">
+            <!-- Your logo -->
+  			    <img src="img/logo.png" alt="" class="main-logo" />
+
+            <div class="h-content">
+              <h1 style="font-size: 2.2em;">Hello Guys!<br> Bookscroll is Coming Soon...</h1>
+              <p style="font-size: 1.1em; font-weight: normal;">Spend less. Read more.</p>
+              <input type="submit" class="explore" value="Explore">
+            </div>
+
+            <ul class="social_icons">
+              <li><a href="http://www.facebook.com/bookscrollcom" target="_blank"><i class="icon ion-social-facebook"></i></a></li>
+              <li><a href="http://www.linkedin.com/company/bookscroll" target="_blank"><i class="icon ion-social-linkedin"></i></a></li>
+              <li><a href="mailto:bookscroll.com@gmail.com" target="_blank"><i class="icon ion-email"></i></a></li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div id="rightSide" style="padding-top:100px; background: linear-gradient(rgba(29, 35, 40, 0.95), rgba(29, 35, 40, 0.95));">
+
+          <div class="rightimage" style="position: relative;">
+            <img src="img/right-bg.jpg" alt="">
+            <div class="drag" style="position:absolute; bottom:120px; right: 45px; z-index: 1000; font-size:1.4em;">
+              <a class="icon-circle">
+                <i id="down" class="ion-arrow-down-c"></i>
+              </a>
+            </div>
+          </div>
+
+
+          <div id="explorehere" class="about" style="background:#fff;">
+            <h2>Confused about what we do?</h2>
+            <p style="font-size: 1em; text-align: justify;">
+              To be simple, all we do is save your money. It’s about making things easy for you. One stop for all your study needs. We provide you the things which you will find nowhere else at the prices you will find nowhere else.
+            </p>
+
+            <h3>Hey Sellers,</h3>
+            <ul style="font-size: 0.95em; padding-left: 2em;">
+              <li style="list-style: square;">
+                You can sell your books, stationery, lab coats and engineering drawing tools. Yes! You read it correctly, you can sell them too.
+              </li>
+              <li style="list-style: square;">
+                We promise you will get the best price for your stuff here.
+              </li>
+              <li style="list-style: square;">
+                Why lose half of your money in selling it somewhere else?
+              </li>
+            </ul>
+
+            <br/>
+
+            <h3>Buyers, why spend more?</h3>
+            <ul style="font-size: 0.95em; padding-left: 2em;">
+              <li style="list-style: square;">
+                Spend less, rather least, to purchase books and other stationery.
+              </li>
+              <li style="list-style: square;">
+                You can even purchase stationery like E.D. tools, lab coats which you’ll find nowhere else at such price.
+              </li>
+              <li style="list-style: square;">
+                Best part is that you get to know your seniors too.
+              </li>
+              <li style="list-style: square;">
+                Use all this stuff throughout the year and you can sell it here next time at almost the same price you paid.
+              </li>
+            </ul>
+
+            <br/>
+            <h3 style="text-align: center;">SPEND LESS, READ MORE!</h3>
+
+            <div class="service row">
+              <div class="feature col-sm-3 col-xs-3">
+                <i class="ion-happy"></i>
+                <h6>SIMPLE</h6>
+              </div>
+
+              <div class="feature col-sm-3 col-xs-3">
+                <i class="ion-cash"></i>
+                <h6>ECONOMIC</h6>
+              </div>
+
+              <div class="feature col-sm-3 col-xs-3">
+                <i class="ion-checkmark"></i>
+                <h6>RELIABLE</h6>
+              </div>
+
+              <div class="feature col-sm-3 col-xs-3">
+                <i class="ion-cube"></i>
+                <h6>INTERACTIVE</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="subscribe">
+            <h2>Stay tuned, we're coming this year</h2>
+            <div class="mb100" id="clock" data-date="2016/08/02 12:00:00"></div>
+
+            <form
+            id="subscribe-form"
+            action="./subscribe?u=3243413134ded32&amp;id=efewf3"
+            method="get">
+              <input type="email" name="EMAIL" class="input-email" value="" placeholder="Your Email Address">
+              <input type="submit" name="subscribe" class="submit input-submit" value="Subscribe">
+              <div id="subscribe-result"></div>
+            </form>
+          </div>
+
+
+          <!--div class="pricing">
+            <div class="row">
+              <div class="offers col-sm-8 col-xs-8">
+                <ul class="col-sm-6 col-xs-6">
+                  <li>Hosting</li>
+                  <li>Web Security</li>
+                  <li>Domain</li>
+                </ul>
+
+                <ul class="col-sm-6 col-xs-6">
+                  <li>24/7 Support</li>
+                  <li>Email Hosting</li>
+                  <li>Premium DNS</li>
+                </ul>
+              </div>
+
+              <div class="price col-sm-4 col-xs-4">
+                <h5 class="rate">29</h5>
+                <p><strong>Per Month</strong></p>
+              </div>
+            </div>
+          </div-->
+
+
+          <div class="team">
+            <h2>Meet our delightful team</h2>
+            <!--p>
+              Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+            </p-->
+
+            <div class="row">
+              <div class="member col-sm-6 col-xs-12">
+                <div class="member-img">
+                  <img src="img/aman.jpg" alt="Aman Garg" class="img-responsive"/>
+
+                  <div class="member-overlay">
+                    <a href="http://www.facebook.com/heizamangarg" target="_blank"><i class="icon ion-social-facebook"></i></a>
+                    <a href="http://www.linkedin.com/in/heizaman" target="_blank"><i class="icon ion-social-linkedin"></i></a>
+                    <a href="http://plus.google.com/102179497394846434785" target="_blank"><i class="icon ion-social-googleplus"></i></a>
+                  </div>
+
+                </div>
+
+                <div class="member-info">
+                  <h5>AMAN GARG</h5>
+                  <!--h6>(Director)</h6-->
+                </div>
+              </div>
+
+              <div class="member col-sm-6 col-xs-12">
+                <div class="member-img">
+                  <img src="img/tejas.jpg" alt="Tejas Porwal" class="img-responsive"/>
+
+                  <div class="member-overlay">
+                    <a href="http://www.facebook.com/tejas.porwal" target="_blank"><i class="icon ion-social-facebook"></i></a>
+                    <a href="http://www.linkedin.com/in/tejas-porwal" target="_blank"><i class="icon ion-social-linkedin"></i></a>
+                    <a href="http://plus.google.com/112445604507209285636" target="_blank"><i class="icon ion-social-googleplus"></i></a>
+                  </div>
+
+                </div>
+
+                <div class="member-info">
+                  <h5>TEJAS PORWAL</h5>
+                  <!--h6>(Director)</h6-->
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div id="contact" class="row">
+              <h2>Get in <strong>touch</strong>, we'd love to hear from you &nbsp;&#x263A;</h2>
+              <!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p-->
+
+              <address class="row">
+                <!--span class="col-sm-6 col-xs-12">
+                  <i class="ion-location"></i>
+                  Address First Line
+                  Second Line
+                </span-->
+                <span class="col-sm-6 col-xs-12">
+                  <i class="ion-ios-telephone"></i>
+                  +91 807 605 3997
+                </span>
+                <span class="col-sm-6 col-xs-12">
+                  <i class="ion-email"></i>
+                  bookscroll.com@gmail.com
+                </span>
+              </address>
+
+              <form id="contact_form" class="row" method="post" action="./php/mailer.php">
+                <div class="col-sm-6 col-xs-12">
+                  <input type="name" name="name" class="input-name" placeholder="Name">
+                  <input type="email" name="email" class="input-email" placeholder="Email">
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                  <textarea name="message" class="input-message" placeholder="Message"></textarea>
+                </div>
+
+                <div class="col-sm-12 col-xs-12">
+                  <button class="submit">Send</button>
+                </div>
+
+                <div id="form-messages" class="col-sm-12 col-xs-12">
+                  <span class="success col-sm-12 col-xs-12"></span>
+                  <span class="error col-sm-12 col-xs-12"></span>
+                </div>
+              </form>
+          </div>
+
+          <footer>
+            <p class="uppercase">© Bookscroll - Made With Love&nbsp; <i class="ion-heart"></i></p>
+            <div class="drag">
+              <i class="up ion-arrow-up-c"></i>
+            </div>
+          </footer>
+
+        </div>
+      </section>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!--script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script-->
+      <!--script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script-->
+      <!--script src="js/jquery.magnific-popup.min.js"></script>
+      <script src="js/jquery.countdown.min.js"></script>
+      <script src="js/twitterFetcher_min.js"></script>
+      <script src="js/masonry.pkgd.min.js"></script>
+      <script src="js/imagesloaded.pkgd.min.js"></script>
+      <script src="js/jquery.flexslider-min.js"></script>
+      <script src="js/photoswipe.min.js"></script>
+      <script src="js/photoswipe-ui-default.min.js"></script>
+      <script src="js/jqinstapics.min.js"></script-->
+      <script src="js/script.js?2"></script>
+
+      <script type="text/javascript">
+      function footerGetCookie(o){for(var t=o+"=",e=document.cookie.split(";"),n=0;n<e.length;n++){for(var r=e[n];" "==r.charAt(0);)r=r.substring(1);if(0==r.indexOf(t))return r.substring(t.length,r.length)}return"blank"}function footerPostToGoogle(o){var t="https://docs.google.com/forms/d/e/1FAIpQLScXsz6qljhrnsVw9z7zlH_RM_6I55UE2QEYn7BvhP3W43F2UQ/formResponse",e={"entry.758832998":footerGetCookie("_ga"),"entry.579371075":window.location.pathname,"entry.380005592":o.ip,"entry.1113800305":o.loc,"entry.243934777":o.city,"entry.1061588137":o.region,"entry.1856128402":o.country,"entry.1882363365":o.hostname,"entry.1305522617":o.org};$.post(t,e)}$.getJSON("http://ipinfo.io",function(o){var t=o.ip;document.cookie="clientip="+t+"; expires=Thu, 26 Dec 2030 12:00:00 UTC; path=/",footerPostToGoogle(o)});
+      </script>
+  </body>
+</html>
